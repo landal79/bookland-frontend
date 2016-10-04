@@ -1,3 +1,4 @@
-<p>
-  book-detail works!
+<p *ngIf="book">
+  {{book.title}}
 </p>
+<button (click)="goBack()">Back</button>

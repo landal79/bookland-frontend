@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { routing, routedComponents } from './app.routing';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import {BookService} from "./book.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     routing,
     HttpModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
