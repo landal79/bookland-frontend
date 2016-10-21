@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import {BookEditComponent} from "./book-edit/book-edit.component";
 
 const appRoutes: Routes = [
   {
@@ -17,10 +18,13 @@ const appRoutes: Routes = [
     path: 'detail/:id',
     component: BookDetailComponent
   },
-
+  {
+    path: 'edit/:id',
+    component: BookEditComponent
+  }
 
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
 
-export const routedComponents = [BookListComponent, BookDetailComponent];
+export const routedComponents = [BookListComponent, BookDetailComponent, BookEditComponent];

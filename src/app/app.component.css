@@ -2,17 +2,9 @@
   padding: 20px;
 }
 
-.app-content md-card {
-  margin: 20px;
-}
-
 .app-sidenav {
-  padding: 10px;
-  min-width: 100px;
-}
-
-.app-content md-checkbox {
-  margin: 10px;
+  margin: 0px;
+  min-width: 200px;
 }
 
 .app-toolbar-filler {

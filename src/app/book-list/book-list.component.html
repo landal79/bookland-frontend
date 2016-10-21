@@ -1,5 +1,16 @@
-<div class="book-list">
-  <div class="book-listing" *ngFor="let book of books">
-    <a routerLink="/detail/{{book.id}}">{{book.title}}</a>
-  </div>
-</div>
+<md-card *ngFor="let book of books">
+  <md-grid-list cols="5" rowHeight="100px">
+    <md-grid-tile [colspan]="4" [style.background]="'lightblue'">
+      <a routerLink="/detail/{{book.id}}">
+        <strong class="title"> {{book.title}} </strong>
+        <small *ngIf="book.publishingDate">— {{book.publishingDate | date: 'dd MMMM yyyy' }}</small>
+      </a>
+    </md-grid-tile>
+    <md-grid-tile [rowspan]="book.description ? 2 : 1" [style.background]="'lightgreen'">
+      <a routerLink="/edit/{{book.id}}">
+        <md-icon>mode_edit</md-icon>
+      </a>
+    </md-grid-tile>
+    <md-grid-tile [colspan]="4" [style.background]="'lightpink'" *ngIf="book.description"><p>{{book.description}}</p></md-grid-tile>
+  </md-grid-list>
+</md-card>

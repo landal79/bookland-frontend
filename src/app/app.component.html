@@ -1,11 +1,27 @@
-<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+<md-sidenav-layout>
 
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
+  <md-sidenav #sidenav mode="over" class="app-sidenav">
 
-    <nav>
-      <a routerLink="list" routerLinkActive="active">Home</a>
-    </nav>
+    <md-toolbar [color]="accent">
+
+      <nav>
+        <a routerLink="list" routerLinkActive="active">Home <md-icon>home</md-icon></a>
+      </nav>
+
+      <md-toolbar-row>
+        <nav>
+          <a routerLink="list" routerLinkActive="active">Deal Of The Day</a>
+        </nav>
+      </md-toolbar-row>
+
+      <md-toolbar-row>
+        <nav>
+          <a routerLink="list" routerLinkActive="active">About</a>
+        </nav>
+      </md-toolbar-row>
+
+    </md-toolbar>
+
 
   </md-sidenav>
 

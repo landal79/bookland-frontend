@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { routing, routedComponents } from './app.routing';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-import {BookService} from "./book.service";
+import { BookEditComponent } from './book-edit/book-edit.component';
+import { BookService } from "./book.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,
