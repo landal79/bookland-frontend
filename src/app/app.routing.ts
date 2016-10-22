@@ -21,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'edit/:id',
     component: BookEditComponent
+  },
+  {
+    path: 'new',
+    component: BookEditComponent
   }
 
 ];

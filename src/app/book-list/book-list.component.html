@@ -14,3 +14,7 @@
     <md-grid-tile [colspan]="4" [style.background]="'lightpink'" *ngIf="book.description"><p>{{book.description}}</p></md-grid-tile>
   </md-grid-list>
 </md-card>
+
+<span class="app-action">
+  <button md-fab (click)="newBook()"><md-icon>add circle</md-icon></button>
+</span>

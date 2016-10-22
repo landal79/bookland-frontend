@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params }   from '@angular/router';
-import { Location }                 from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params}   from '@angular/router';
+import {Location}                 from '@angular/common';
 import {BookService} from "../book.service";
 import {Book} from "../model/book";
 
@@ -11,17 +11,23 @@ import {Book} from "../model/book";
 })
 export class BookEditComponent implements OnInit {
 
-  book : Book;
+  book: Book;
 
-  constructor(private bookService : BookService,
+  constructor(private bookService: BookService,
               private route: ActivatedRoute,
-              private location: Location) { }
+              private location: Location) {
+  }
 
   ngOnInit() {
+
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.bookService.getById(id)
-        .then(book => this.book = book);
+      if (id) {
+        this.bookService.getById(id)
+          .then(book => this.book = book);
+      } else {
+        this.book = new Book();
+      }
     });
   }
 
