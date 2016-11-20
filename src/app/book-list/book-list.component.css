@@ -2,9 +2,11 @@
   margin: 20px;
 }
 
-.app-action {
-  display: inline-block;
+:host div.app-action {
+  display: flex;
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
+
+

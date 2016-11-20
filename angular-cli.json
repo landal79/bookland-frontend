@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.15",
+    "version": "1.0.0-beta.17",
     "name": "bookland-frontend"
   },
   "apps": [
@@ -17,7 +17,8 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

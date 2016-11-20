@@ -27,4 +27,13 @@ export class BookService {
     return this.getBooks().then(books => books.find(book => book.id === id));
   }
 
+  saveOrUpdate(book : Book) : void
+  {
+    if(book.id == null)
+    {
+      book.id = BOOKS[BOOKS.length -1].id + 1;
+      BOOKS.push(book);
+    }
+  }
+
 }

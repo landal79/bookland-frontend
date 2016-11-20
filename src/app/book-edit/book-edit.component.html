@@ -1,33 +1,48 @@
 <p *ngIf="book">
   <md-card>
-    <md-card-title>
-      <md-toolbar color="primary">Book edit</md-toolbar>
-    </md-card-title>
+    <md-card-header>
+      <md-toolbar color="primary">
+        <md-toolbar color="primary">
+          <span class="fill-space"></span>
+          <span>
+          <button md-icon-button (click)="save()">
+            <md-icon>save</md-icon>
+          </button>
+        </span>
+        </md-toolbar>
+      </md-toolbar>
+    </md-card-header>
     <md-card-content>
-        <md-grid-list cols="2" rowHeight="100px">
+      <md-grid-list cols="2" rowHeight="100px">
 
-          <md-grid-tile>
-            <md-input placeholder="title" [(ngModel)]="book.title"></md-input>
-          </md-grid-tile>
+        <md-grid-tile>
+          <md-input placeholder="title" [(ngModel)]="book.title" style="width: 100%"></md-input>
+        </md-grid-tile>
 
-          <md-grid-tile>
-            <md-input placeholder="publishing date" type="date" [(ngModel)]="book.publishingDate"></md-input>
-          </md-grid-tile>
+        <md-grid-tile>
+          <md-input placeholder="publishing date" type="date" [(ngModel)]="book.publishingDate"></md-input>
+        </md-grid-tile>
 
-          <md-grid-tile [colspan]="2">
-            <md-input placeholder="descriprition" [(ngModel)]="book.description"></md-input>
-          </md-grid-tile>
 
-        </md-grid-list>
+        <md-grid-tile [colspan]="2" [rowspan]="4">
+          <editor [elementId]="editorid" [content]="book.description" (change-content)="handleContent($event)"></editor>
+        </md-grid-tile>
+
+      </md-grid-list>
 
     </md-card-content>
     <md-card-footer>
-      Footer
-
-      <a routerLink="/">
-        <md-icon>save</md-icon>
-      </a>
-
+      <md-toolbar color="primary">
+        <span class="fill-space"></span>
+        <span>
+          <button md-icon-button color="accent" (click)="clear()">
+            <md-icon>clear</md-icon>
+          </button>
+          <button md-icon-button color="warn" (click)="save()">
+            <md-icon>save</md-icon>
+          </button>
+        </span>
+      </md-toolbar>
     </md-card-footer>
   </md-card>
 </p>

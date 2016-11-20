@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Params}   from '@angular/router';
+import {ActivatedRoute, Params, Router}   from '@angular/router';
 import {Location}                 from '@angular/common';
 import {BookService} from "../book.service";
 import {Book} from "../model/book";
@@ -11,11 +11,13 @@ import {Book} from "../model/book";
 })
 export class BookEditComponent implements OnInit {
 
+
   book: Book;
 
   constructor(private bookService: BookService,
               private route: ActivatedRoute,
-              private location: Location) {
+              private location: Location,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -29,6 +31,22 @@ export class BookEditComponent implements OnInit {
         this.book = new Book();
       }
     });
+  }
+8
+  handleContent(event: CustomEvent) {
+    console.info('handleContent: ' +  JSON.stringify(event));
+    this.book.description = event.toString();
+  }
+
+  clear(): void {
+    this.router.navigate(['list']);
+  }
+
+  save(): void {
+    if (this.book.id == null) {
+      this.bookService.saveOrUpdate(this.book);
+    }
+    this.router.navigate(['list']);
   }
 
 }

@@ -11,10 +11,10 @@
         <md-icon>mode_edit</md-icon>
       </a>
     </md-grid-tile>
-    <md-grid-tile [colspan]="4" [style.background]="'lightpink'" *ngIf="book.description"><p>{{book.description}}</p></md-grid-tile>
+    <md-grid-tile [colspan]="4" [style.background]="'lightpink'" *ngIf="book.description"><div [innerHTML]="book.description"></div></md-grid-tile>
   </md-grid-list>
 </md-card>
 
-<span class="app-action">
+<div class="app-action">
   <button md-fab (click)="newBook()"><md-icon>add circle</md-icon></button>
-</span>
+</div>
