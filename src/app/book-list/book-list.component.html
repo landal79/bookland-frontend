@@ -1,10 +1,13 @@
 <md-card *ngFor="let book of books">
   <md-grid-list cols="5" rowHeight="100px">
-    <md-grid-tile [colspan]="4" [style.background]="'lightblue'">
+    <md-grid-tile [colspan]="3" [style.background]="'lightblue'">
       <a routerLink="/detail/{{book.id}}">
         <strong class="title"> {{book.title}} </strong>
         <small *ngIf="book.publishingDate">— {{book.publishingDate | date: 'dd MMMM yyyy' }}</small>
       </a>
+    </md-grid-tile>
+    <md-grid-tile [colspan]="1" [style.background]="'lightblue'">
+      <bl-stars [rating]="book.rating"></bl-stars>
     </md-grid-tile>
     <md-grid-tile [rowspan]="book.description ? 2 : 1" [style.background]="'lightgreen'">
       <a routerLink="/edit/{{book.id}}">
@@ -16,5 +19,5 @@
 </md-card>
 
 <div class="app-action">
-  <button md-fab (click)="newBook()"><md-icon>add circle</md-icon></button>
+  <button md-fab (click)="newBook()"><md-icon class="md-24">add</md-icon></button>
 </div>

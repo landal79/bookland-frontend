@@ -7,7 +7,7 @@ const BOOKS: Book[] = [
   { id: 13, title: 'Bombasto' },
   { id: 14, title: 'Celeritas' },
   { id: 15, title: 'Magneta', description : 'a short description' },
-  { id: 16, title: 'RubberMan' },
+  { id: 16, title: 'RubberMan', rating: 4 },
   { id: 17, title: 'Dynama' },
   { id: 18, title: 'Dr IQ' },
   { id: 19, title: 'Magma' },

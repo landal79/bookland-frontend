@@ -32,7 +32,7 @@ export class BookEditComponent implements OnInit {
       }
     });
   }
-8
+
   handleContent(event: CustomEvent) {
     console.info('handleContent: ' +  JSON.stringify(event));
     this.book.description = event.toString();

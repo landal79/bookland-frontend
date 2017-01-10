@@ -1,8 +1,9 @@
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 
-import { BookListComponent } from './book-list/book-list.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookEditComponent } from "./book-edit/book-edit.component";
+import {BookListComponent} from './book-list/book-list.component';
+import {BookDetailComponent} from './book-detail/book-detail.component';
+import {BookEditComponent} from "./book-edit/book-edit.component";
+import {_404Component} from "./404-component/404";
 
 const appRoutes: Routes = [
   {
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
   {
     path: 'new',
     component: BookEditComponent
-  }
+  },
+  {path: '**', component: _404Component}
 
 ];
 

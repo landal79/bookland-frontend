@@ -12,6 +12,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookService } from "./book.service";
 import { EditorComponent } from './editor/editor.component';
+import { _404Component } from './404-component/404';
+import {ComponentsModule} from "./components/components.module";
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { EditorComponent } from './editor/editor.component';
     BookListComponent,
     BookDetailComponent,
     BookEditComponent,
-    EditorComponent
+    EditorComponent,
+    _404Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing,
     HttpModule,
+    ComponentsModule,
     CKEditorModule,
     MaterialModule.forRoot()
   ],

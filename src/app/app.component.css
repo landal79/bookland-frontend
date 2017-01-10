@@ -33,7 +33,7 @@
   text-decoration: none;
 }
 
-.app-action {
+:host >>> .app-action {
   display: inline-block;
   position: fixed;
   bottom: 20px;
