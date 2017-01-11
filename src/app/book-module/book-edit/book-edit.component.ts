@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router}   from '@angular/router';
 import {Location}                 from '@angular/common';
-import {BookService} from "../book.service";
-import {Book} from "../model/book";
+import {BookService} from "../../services/book.service";
+import {Book} from "../../model/book";
 
 @Component({
   selector: 'app-book-edit',
@@ -10,7 +10,6 @@ import {Book} from "../model/book";
   styleUrls: ['./book-edit.component.css']
 })
 export class BookEditComponent implements OnInit {
-
 
   book: Book;
 
@@ -34,7 +33,7 @@ export class BookEditComponent implements OnInit {
   }
 
   handleContent(event: CustomEvent) {
-    console.info('handleContent: ' +  JSON.stringify(event));
+    console.info('handleContent: ' + JSON.stringify(event));
     this.book.description = event.toString();
   }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Book} from "./model/book";
+import {Book} from "../model/book";
 
 const BOOKS: Book[] = [
   { id: 11, title: 'Mr. Nice', publishingDate: new Date('1968-11-16T00:00:00')},
