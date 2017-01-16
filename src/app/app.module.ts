@@ -36,7 +36,10 @@ const appRoutes: Routes = [
     path: 'new',
     component: BookEditComponent
   },
-  {path: '**', component: _404Component}
+  {
+    path: '**',
+    component: _404Component
+  }
 
 ];
 
